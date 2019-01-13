@@ -1,0 +1,7 @@
+<li>
+  <% @parts.each do |part| %>
+    <ul><strong><%= part.reference_site %></strong></ul>
+    <ul><%= part.reference_part %></ul>
+    <ul><%= part.part_type_designation %></ul>
+  <% end %>
+</li>

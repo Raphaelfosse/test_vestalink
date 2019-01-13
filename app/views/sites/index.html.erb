@@ -1,0 +1,13 @@
+<li>
+  <%= link_to 'Ajouter un lot', new_site_part_path(:site_id) %>
+  <% @sites.each do |site| %>
+    <ul><strong><%= site.id %></strong></ul>
+    <ul><%= site.reference_site %></ul>
+    <ul><%= site.nom %></ul>
+    <ul><%= site.address_line1 %></ul>
+    <ul><%= site.zipcode %></ul>
+    <ul><%= site.city %></ul>
+    <ul><%= link_to 'Modifier le site', edit_site_path(site) %></ul>
+    <ul><%= link_to "Voir les parts", site_parts_path(:site_id => site) %></ul>
+  <% end %>
+</li>

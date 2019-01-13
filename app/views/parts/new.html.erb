@@ -1,0 +1,7 @@
+<h3>Créer un lot</h3>
+<%= form_for @part, url: {action: "create"} do |form| %>
+  <%= form.collection_select :site_id, Part.select(:site_id).distinct, :site_id, :site_id %>
+  <%= form.text_field :part_type_designation, placeholder: "Type du lot "  %>
+
+  <%= form.submit %>
+<% end %>
