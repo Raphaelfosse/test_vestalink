@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'sites#index'
   resources :sites do
     resources :parts, param: :site_id
   end
