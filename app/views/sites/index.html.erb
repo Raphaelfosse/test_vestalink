@@ -1,5 +1,4 @@
 <li>
-  <%= link_to 'Ajouter un lot', new_site_part_path(:site_id) %>
   <% @sites.each do |site| %>
     <ul><strong><%= site.id %></strong></ul>
     <ul><%= site.reference_site %></ul>
