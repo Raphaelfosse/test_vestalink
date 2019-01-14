@@ -1,7 +1,15 @@
-<h3>Créer un lot</h3>
+<h1 style="text-align: center;">Création de lot</h1>
 <%= form_for @part, url: {action: "create"} do |form| %>
-  <%= form.collection_select :site_id, Part.select(:site_id).distinct, :site_id, :site_id %>
-  <%= form.text_field :part_type_designation, placeholder: "Type du lot "  %>
+  <div class="form-group">
+    <%= form.label :site_id, "Réference du site", class: "control-label" %>
+    <%= form.collection_select :site_id, Part.select(:site_id).distinct, :site_id, :site_id %>
+  </div>
+  <div class="form-group">
+    <%= form.label :part_type_designation, 'Type de lot' , class: "control-label" %>
+    <%= form.text_field :part_type_designation, class: "form-control" %>
+  </div>
 
-  <%= form.submit %>
+  <%= form.submit "Modifier", class: "btn btn-primary" %>
 <% end %>
+
+

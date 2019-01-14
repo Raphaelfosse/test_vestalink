@@ -21,7 +21,7 @@ class PartsController < ApplicationController
 
     @part.save
 
-    redirect_to site_parts_path
+    redirect_to sites_path
   end
 
   private

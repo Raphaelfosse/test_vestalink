@@ -1,10 +1,28 @@
-<h3>Update Site Details</h3>
-<%= form_with model: @site do |form| %>
-  <%= form.text_field :reference_site, placeholder: "Reference du site" %>
-  <%= form.text_field :nom, placeholder: "Nom de l'immeuble" %>
-  <%= form.text_field :address_line1, placeholder: "Adresse" %>
-  <%= form.text_field :zipcode, placeholder: "Code Postal" %>
-  <%= form.text_field :city, placeholder: "Ville" %>
+<%= form_with model: @site, local: true do |form| %>
+  <div class="form-group">
+    <%= form.label :reference_site, class: "control-label" %>
+    <%= form.text_field :reference_site, class: "form-control" %>
+  </div>
 
-  <%= form.submit %>
+  <div class="form-group">
+    <%= form.label :address_line1, 'Adresse', class: "control-label" %>
+    <%= form.text_field :address_line1, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :nom, 'Nom', class: "control-label" %>
+    <%= form.text_field :nom, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :city, 'Ville', class: "control-label" %></br>
+    <%= form.text_field :city, class: "control-label" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :zipcode, 'Code postal', class: "control-label" %>
+    <%= form.text_field :zipcode, class: "form-control" %>
+  </div>
+
+  <%= form.submit "Modifier", class: "btn btn-primary" %>
 <% end %>
